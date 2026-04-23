@@ -12,8 +12,8 @@ alter table USERS
 add column phone_new varchar(15) null;
 
 update USERS
-set phone_new = concat('0, phone')
-where phone_new is null;
+set phone_new = concat('0', phone)
+where phone_new is null and user_id > 0;
 
 alter table USERS
 drop column phone;
